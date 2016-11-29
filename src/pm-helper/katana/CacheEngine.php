@@ -1,8 +1,8 @@
 <?php
 
-namespace pocketmine\katana;
+namespace pm-helper/katana;
 
-use pocketmine\utils\Terminal;
+use pm-helper\Terminal;
 
 
 class CacheEngine extends KatanaModule
