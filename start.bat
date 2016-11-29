@@ -9,8 +9,8 @@ if exist bin\php\php.exe (
 	set PHP_BINARY=php
 )
 
-if exist src\pocketmine\logger.php (
-	   set Logger_FILE=src\pocketmine\logger.php
+if exist src\pm-helper\logger.php (
+	   set Logger_FILE=src\pm-helper\logger.php
 			) else (
 		        echo "[ERROR] Couldn't find a valid helper installation."
 		        pause
