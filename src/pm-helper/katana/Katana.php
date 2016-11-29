@@ -9,10 +9,7 @@ use pm-helper\Terminal;
 class Katana
 {
     private $logger;
-    	
-    public function getLogger(){
-		return $this->logger;
-	}
+	
     public function __construct($server)
     {
         $this->server = $server;
