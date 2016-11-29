@@ -1,8 +1,8 @@
 <?php
 
-namespace pocketmine\katana;
+namespace pm-helper\katana;
 
-use pocketmine\utils\Terminal;
+use pm-helper\Terminal;
 
 
 class Console extends KatanaModule
@@ -13,23 +13,4 @@ class Console extends KatanaModule
         parent::writeLoaded();
     }
 
-    public function system($text, $level = "info")
-    {
-        parent::getServer()->getLogger()->{$level}(Terminal::$COLOR_AQUA . "system> " . Terminal::$COLOR_GRAY . $text);
-    }
-
-    public function game($text, $level = "info")
-    {
-        parent::getServer()->getLogger()->{$level}(Terminal::$COLOR_LIGHT_PURPLE . "game> " . Terminal::$COLOR_GRAY . $text);
-    }
-
-    public function plugin($text, $level = "info")
-    {
-        parent::getServer()->getLogger()->{$level}(Terminal::$COLOR_GREEN . "plugin> " . Terminal::$COLOR_GRAY . $text);
-    }
-
-    public function katana($text, $level = "info")
-    {
-        parent::getServer()->getLogger()->{$level}(Terminal::$COLOR_GOLD . "PocketMine-MP> " . Terminal::$COLOR_GRAY . $text);
-    }
 }
