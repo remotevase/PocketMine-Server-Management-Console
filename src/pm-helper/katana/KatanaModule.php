@@ -2,9 +2,9 @@
 
 
 
-namespace pocketmine\imagical;
+namespace pm-helper\katana;
 
-use pocketmine\utils\Terminal;
+use pm-helper\Terminal;
 
 
 
