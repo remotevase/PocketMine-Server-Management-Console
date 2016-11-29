@@ -3,8 +3,7 @@
 
 namespace pm-helper\katana;
 
-use pm-helper\Server;
-use pocketmine\utils\Terminal;
+use pm-helper\Terminal;
 
 
 class Katana
@@ -19,14 +18,8 @@ class Katana
         $this->server = $server;
         $this->logger = $this->getLogger();
 
-$this->logger->info(Terminal::$COLOR_GOLD . "------------------------------------------------------------------------------------ ");
-$this->logger->info(Terminal::$COLOR_GOLD . "|" . Terminal::$COLOR_AQUA . "    ____  _    _" . Terminal::$COLOR_PURPLE . "      _    _ ____   " . Terminal::$COLOR_GOLD . " | ");
-$this->logger->info(Terminal::$COLOR_GOLD . "|" . Terminal::$COLOR_AQUA . "   /  __\| \__/| . Terminal::$COLOR_PURPLE . "     / \__/|/  __\   " . Terminal::$COLOR_GOLD . "| ");
-$this->logger->info(Terminal::$COLOR_GOLD . "|" . Terminal::$COLOR_AQUA . "   |  \/|| |\/||" . Terminal::$COLOR_GOLD . " ___ " . Terminal::$COLOR_PURPLE . " | |\/|||  \/|  " . Terminal::$COLOR_GOLD . " | ");
-$this->logger->info(Terminal::$COLOR_GOLD . "|" . Terminal::$COLOR_AQUA . "   |  __/| |  || " . Terminal::$COLOR_GOLD . "\__\ " . Terminal::$COLOR_PURPLE . "| |  |||  __/   " . Terminal::$COLOR_GOLD . "| ");
-$this->logger->info(Terminal::$COLOR_GOLD . "|" . Terminal::$COLOR_AQUA . "   \_/   \_/  \| " . Terminal::$COLOR_PURPLE . "    \_/  \|\_/      " . Terminal::$COLOR_GOLD . "| ");
-$this->logger->info(Terminal::$COLOR_GOLD . "------------------------------------------------------------------------------------ ");
-        
+$this->logger->info(Terminal::$COLOR_GOLD . "--------------------------------" . Terminal::$COLOR_BLUE . "PocketMine Helper" . Terminal::$COLOR_GOLD . "-------------------------------- ");
+$this->logger->info(Terminal::$COLOR_GREEN . "This tool is perfect for beginners who want some help running a server! It has a simple interface that is free to use! \n Click on one of the links below to get started!");    
     }
 
     public function getServer()
