@@ -3,52 +3,16 @@
 namespace pocketmine\wizard;
 use pocketmine\utils\Config;
 use pocketmine\utils\Utils;
-class Installer{
+class logger{
 	
-	private $defaultLang;
-	public function __construct(){
-		echo "[*] PocketMine Console Helper\n";
-		echo "[*] Please select a language:\n";
-		foreach(InstallerLang::$languages as $short => $native){
-			echo " $native => $short\n";
-		}
-		do{
-			echo "[?] Language (eng): ";
-			$lang = strtolower($this->getInput("eng"));
-			if(!isset(InstallerLang::$languages[$lang])){
-				echo "[!] Couldn't find the language\n";
-				$lang = false;
-			}
-			$this->defaultLang = $lang;
-		}while($lang == false);
-		$this->lang = new InstallerLang($lang);
-		echo "[*] " . $this->lang->language_has_been_selected . "\n";
-		if(!$this->showLicense()){
-			@\pocketmine\kill(getmypid());
-			exit(-1);
-		}
-		echo "[?] " . $this->lang->skip_installer . " (y/N): ";
-		if(strtolower($this->getInput()) === "y"){
-			return;
-		}
-		echo "\n";
-		$this->welcome();
-		$this->generateBaseConfig();
-		$this->generateUserFiles();
-		$this->networkFunctions();
-		$this->endWizard();
-	}
+
 	public function getDefaultLang(){
 		return $this->defaultLang;
 	}
 	private function showLicense(){
-		echo $this->lang->welcome_to_pocketmine . "\n";
-		echo <<<LICENSE
-  This program is free software: you can redistribute it and/or modify
-  it under the terms of the GNU Lesser General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
-LICENSE;
+		echo "Welcome to the PocketMine Console Helper!\n";
+		echo "Choice 1: Install PocketMine";
+		echo "Choice 2: Update the PocketMine phar";
 		echo "\n[?] " . $this->lang->accept_license . " (y/N): ";
 		if(strtolower($this->getInput("n")) != "y"){
 			echo "[!] " . $this->lang->you_have_to_accept_the_license . "\n";
