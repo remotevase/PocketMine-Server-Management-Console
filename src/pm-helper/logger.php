@@ -1,49 +1,13 @@
 <?php
-/*
- *
- *  ____            _        _   __  __ _                  __  __ ____  
- * |  _ \ ___   ___| | _____| |_|  \/  (_)_ __   ___      |  \/  |  _ \ 
- * | |_) / _ \ / __| |/ / _ \ __| |\/| | | '_ \ / _ \_____| |\/| | |_) |
- * |  __/ (_) | (__|   <  __/ |_| |  | | | | | |  __/_____| |  | |  __/ 
- * |_|   \___/ \___|_|\_\___|\__|_|  |_|_|_| |_|\___|     |_|  |_|_| 
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * @author PocketMine Team
- * @link http://www.pocketmine.net/
- * 
- *
-*/
-/**
- * Set-up wizard used on the first run
- * Can be disabled with --no-wizard
- */
+
 namespace pocketmine\wizard;
 use pocketmine\utils\Config;
 use pocketmine\utils\Utils;
 class Installer{
-	const DEFAULT_NAME = "Minecraft: PE Server";
-	const DEFAULT_PORT = 19132;
-	const DEFAULT_MEMORY = 512;
-	const DEFAULT_PLAYERS = 20;
-	const DEFAULT_GAMEMODE = 0;
-	const DEFAULT_LEVEL_NAME = "world";
-	const DEFAULT_LEVEL_TYPE = "DEFAULT";
 	
-	const LEVEL_TYPES = [
-		"DEFAULT",
-		"FLAT",
-		"NORMAL",
-		"NORMAL2",
-		"HELL", //nether type, in case anyone wants to generate a blue-skies nether, which actually does look pretty awesome
-		"VOID"
-	];
 	private $defaultLang;
 	public function __construct(){
-		echo "[*] Genisys set-up wizard\n";
+		echo "[*] PocketMine Console Helper\n";
 		echo "[*] Please select a language:\n";
 		foreach(InstallerLang::$languages as $short => $native){
 			echo " $native => $short\n";
