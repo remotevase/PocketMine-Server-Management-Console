@@ -2,7 +2,11 @@
 
 namespace pm-helper;
 class logger{
-	
+	    
+    public function __construct($sock, $datapath){
+        $this->datapath = $datapath;
+        $this->cfg = realpath($datapath . "../cfg.json"));
+    }
 	if(version_compare("7.0", PHP_VERSION) > 0){
 		echo "[CRITICAL] You must use PHP >= 7.0" . PHP_EOL;
 		echo "[CRITICAL] Please use the installer provided on the homepage." . PHP_EOL;
@@ -14,8 +18,8 @@ class logger{
 		exit(1);
 	}
 	if(!class_exists("ClassLoader", false)){
-		require_once(\pocketmine\PATH . "src/spl/ClassLoader.php");
-		require_once(\pocketmine\PATH . "src/spl/BaseClassLoader.php");
+		require_once(\pocketmine\PATH . "src/pm-helper/ClassLoader.php");
+		require_once(\pocketmine\PATH . "src/pm-helper/BaseClassLoader.php");
 		require_once(\pocketmine\PATH . "src/pocketmine/CompatibleClassLoader.php");
 	}
 	$autoloader = new CompatibleClassLoader();
